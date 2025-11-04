@@ -2,7 +2,7 @@
 Per determinare se una parola è palindroma, in JS, 
 non esiste un metodo che sia in grado di fare tutto 
 il lavoro al posto nostro. Tuttavia, possiamo utilizzare 
-dueescamotage per ottenere il risultato voluto:
+due escamotage per ottenere il risultato voluto:
 
 1 - Suddividiamo la stringa in modo tale che
     ogni carattere diventi un elemento di un array.
@@ -10,10 +10,10 @@ dueescamotage per ottenere il risultato voluto:
     elementi per farlo tornare una stringa
 
 2 - Sfruttiamo un for loop che "legge" uno ad uno i
-    caratteri della stringa e li salva progressivamente
-    all'interno di una nuova stringa. 
-    Controlliamo quindi se la nuova stringa è uguale a
-    quella di partenza
+    caratteri della stringa partendo dall'ultimo
+    e li salva progressivamente all'interno di una nuova stringa. 
+    Controlliamo quindi se la nuova stringa, invertita, 
+    è uguale a quella di partenza
 */
 
 // Metodo 1
@@ -21,15 +21,28 @@ dueescamotage per ottenere il risultato voluto:
 // chiedo all'utente di inserire una parola
 let userWord = prompt("Inserisci una parola, io controllerò se è palindroma");
 
-function isPalindrome(word) {
-    let wordReversed = word.split("").reverse().join("");
-    if (wordReversed == word) {
+// prende una stringa e restituisce vero se è palindroma altrimenti falso
+function isPalindromeWithArray(str) {
+    let strReversed = str.split("").reverse().join("");
+    if (strReversed == str) {
         return true;
     }
     return false;
 }
 
-let parolaRitornata = isPalindrome(userWord);
-console.log(parolaRitornata);
+console.log(isPalindromeWithArray(userWord));
 
+// prende una stringa e restituisce vero se è palindroma altrimenti falso
+function isPalindromeWithFor(str) {
+    let strReversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        strReversed += str[i];
+    }
+    if (strReversed == str) {
+        return true;
+    }
+    return false;
+}
+
+console.log(isPalindromeWithFor(userWord));
 
