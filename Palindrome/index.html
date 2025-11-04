@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Synthax Highlighter -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
+    <!-- Bootstrap CDN -->
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>isPalindrome</title>
 </head>
+
 <body>
-    
+    <header>
+        <div class="container my-5">
+            <div class="row">
+                <div class="col">
+                    <h1>isPalindrome</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Per determinare se una parola è <b>palindroma</b>, in JS,
+                        non esiste un metodo che sia in grado di fare tutto
+                        il lavoro al posto nostro. Tuttavia, possiamo utilizzare
+                        due escamotage per ottenere il risultato voluto:
+                    </p>
+                </div>
+                <div class="col-6 py-4">
+                    <p>
+                        1. Suddividiamo la stringa in modo tale che
+                        ogni carattere diventi un elemento di un <b>array</b>.
+                        Reversiamo quindi l'array e facciamo poi il join degli
+                        elementi per farlo tornare una stringa
+                    </p>
+                </div>
+                <div class="col-6">
+                    <pre>
+                        <code>
+    function isPalindromeWithArray(str) {
+        let strReversed = str.split("").reverse().join("");
+        if (strReversed == str) {
+            return true;
+        }
+        return false;
+    }
+                        </code>
+                    </pre>
+                </div>
+                <div class="row"></div>
+                <div class="col-6">
+                    <pre>
+                        <code>
+    function isPalindromeWithFor(str) {
+        let strReversed = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+            strReversed += str[i];
+        }
+        if (strReversed == str) {
+            return true;
+        }
+        return false;
+    }
+                        </code>
+                    </pre>
+                </div>
+                <div class="col-6 py-4">
+                    <p>
+                        2. Sfruttiamo un for loop che "legge" uno ad uno i
+                        caratteri della stringa partendo dall'ultimo
+                        e li salva progressivamente all'interno di una nuova stringa.
+                        Controlliamo quindi se la nuova stringa, invertita,
+                        è uguale a quella di partenza
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
     <script src="isPalindrome.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </body>
+
 </html>

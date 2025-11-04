@@ -19,7 +19,7 @@ due escamotage per ottenere il risultato voluto:
 // Metodo 1
 
 // chiedo all'utente di inserire una parola
-let userWord = prompt("Inserisci una parola, io controllerò se è palindroma");
+// let userWord = prompt("Inserisci una parola, io controllerò se è palindroma");
 
 // prende una stringa e restituisce vero se è palindroma altrimenti falso
 function isPalindromeWithArray(str) {
@@ -29,8 +29,6 @@ function isPalindromeWithArray(str) {
     }
     return false;
 }
-
-console.log(isPalindromeWithArray(userWord));
 
 // prende una stringa e restituisce vero se è palindroma altrimenti falso
 function isPalindromeWithFor(str) {
@@ -43,6 +41,3 @@ function isPalindromeWithFor(str) {
     }
     return false;
 }
-
-console.log(isPalindromeWithFor(userWord));
-
