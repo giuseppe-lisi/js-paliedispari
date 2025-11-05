@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <!-- Header -->
     <header>
         <div class="container my-5">
             <div class="row">
@@ -25,6 +26,7 @@
         </div>
     </header>
 
+    <!-- Spiegazione Metodi -->
     <main>
         <div class="container">
             <div class="row">
@@ -33,12 +35,19 @@
                         Per determinare se una parola è <b>palindroma</b>, in JS,
                         non esiste un metodo che sia in grado di fare tutto
                         il lavoro al posto nostro. Tuttavia, possiamo utilizzare
-                        due escamotage per ottenere il risultato voluto:
+                        due escamotage per ottenere il risultato voluto.
                     </p>
                 </div>
+            </div>
+            
+            <hr>
+
+            <!-- Metodo 1 -->
+            <div class="row my-5">
                 <div class="col-6 py-4">
+                    <h3>Metodo 1</h3>
                     <p>
-                        1. Suddividiamo la stringa in modo tale che
+                        Suddividiamo la stringa in modo tale che
                         ogni carattere diventi un elemento di un <b>array</b>.
                         Reversiamo quindi l'array e facciamo poi il join degli
                         elementi per farlo tornare una stringa
@@ -57,7 +66,36 @@
                         </code>
                     </pre>
                 </div>
-                <div class="row"></div>
+                <!-- Tool -->
+                <div class="col-12 d-flex justify-content-between">
+                    <h5>Usa la funzione tu stesso</h5>
+                    <p>Console Output</p>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control mb-3" placeholder="Inserisci una parola" id="field1">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-primary" onclick="isPalindromeWithArray(document.getElementById('field1').value)">Controlla Palindromo</button>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="output1" disabled>
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- Metodo 2 -->
+            <div class="row my-5">
+                <div class="col-6 py-4">
+                    <h3>Metodo 2</h3>
+                    <p>
+                        Sfruttiamo un <b>for loop</b> che "legge" uno ad uno i
+                        caratteri della stringa partendo dall'ultimo
+                        e li salva progressivamente all'interno di una nuova stringa.
+                        Controlliamo quindi se la nuova stringa, invertita,
+                        è uguale a quella di partenza
+                    </p>
+                </div>
                 <div class="col-6">
                     <pre>
                         <code>
@@ -74,14 +112,19 @@
                         </code>
                     </pre>
                 </div>
-                <div class="col-6 py-4">
-                    <p>
-                        2. Sfruttiamo un for loop che "legge" uno ad uno i
-                        caratteri della stringa partendo dall'ultimo
-                        e li salva progressivamente all'interno di una nuova stringa.
-                        Controlliamo quindi se la nuova stringa, invertita,
-                        è uguale a quella di partenza
-                    </p>
+                <!-- Tool -->
+                <div class="col-12 d-flex justify-content-between">
+                    <h5>Usa la funzione tu stesso</h5>
+                    <p>Console Output</p>
+                </div>
+                <div class="col-3">
+                    <input type="text" class="form-control mb-3" placeholder="Inserisci una parola" id="field2">
+                </div>
+                <div class="col-3">
+                    <button class="btn btn-primary" onclick="isPalindromeWithFor(document.getElementById('field2').value)">Controlla Palindromo</button>
+                </div>
+                <div class="col-6">
+                    <input type="text" class="form-control" id="output2" disabled>
                 </div>
             </div>
         </div>
