@@ -8,7 +8,6 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
     <!-- Bootstrap CDN -->
-    <!-- Bootstrap CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>isPalindrome</title>
@@ -56,13 +55,13 @@
                 <div class="col-6">
                     <pre>
                         <code>
-    function isPalindromeWithArray(str) {
-        let strReversed = str.split("").reverse().join("");
-        if (strReversed == str) {
-            return true;
-        }
-        return false;
+function isPalindromeWithArray(str) {
+    let strReversed = str.split("").reverse().join("");
+    if (strReversed == str) {
+        return true;
     }
+    return false;
+}
                         </code>
                     </pre>
                 </div>
@@ -99,16 +98,16 @@
                 <div class="col-6">
                     <pre>
                         <code>
-    function isPalindromeWithFor(str) {
-        let strReversed = "";
-        for (let i = str.length - 1; i >= 0; i--) {
-            strReversed += str[i];
-        }
-        if (strReversed == str) {
-            return true;
-        }
-        return false;
+function isPalindromeWithFor(str) {
+    let strReversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        strReversed += str[i];
     }
+    if (strReversed == str) {
+        return true;
+    }
+    return false;
+}
                         </code>
                     </pre>
                 </div>
